@@ -1,19 +1,8 @@
 {
   "tasks": {
-    "serve": "deno run --watch=src,schema,csv --allow-net=0.0.0.0 --allow-read=. src/main.ts serve",
-    "compile": "deno compile --allow-net=0.0.0.0 --allow-read=. --output dist/graf src/main.ts"
-  },
-  "imports": {
-    "emit": "https://deno.land/x/emit@0.19.0/mod.ts",
-    "base64": "https://deno.land/std@0.183.0/encoding/base64.ts",
-    "csv": "https://deno.land/std@0.183.0/csv/mod.ts",
-    "server": "https://deno.land/std@0.183.0/http/server.ts",
-    "gql": "https://deno.land/x/gql@1.1.2/mod.ts",
-    "graphql_tag": "https://deno.land/x/graphql_tag@0.1.1/mod.ts",
-    "graphql_tools": "https://deno.land/x/graphql_tools@0.0.3/mod.ts",
-    "graphql_tools/utils/": "https://deno.land/x/graphql_tools@0.0.3/utils/",
-    "graphql_tools/schema/": "https://deno.land/x/graphql_tools@0.0.3/schema/",
-    "cliffy/command": "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
+    "run": "deno run --watch=src,testdata draQLa.ts",
+    "serve": "deno run --watch=src,testdata --allow-net=0.0.0.0 --allow-read=. draQLa.ts serve",
+    "compile": "deno compile --allow-net=0.0.0.0 --allow-read=. draQLa.ts"
   },
   "fmt": {
     "files": {

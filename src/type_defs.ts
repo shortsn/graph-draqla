@@ -1,4 +1,4 @@
-import { gql } from "graphql_tag";
+import { gql } from "./deps.ts";
 
 const File = `
   """

@@ -1,6 +1,4 @@
-import { readLines } from "https://deno.land/std@0.183.0/io/read_lines.ts";
-
-import { Command } from "cliffy/command";
+import { Command, readLines } from "./deps.ts";
 import { run, serve } from "./graphQL.ts";
 
 async function readStdin() {
@@ -13,8 +11,8 @@ async function readStdin() {
   return lines.join('\n');
 }
 
-const command = new Command()
-  .name("graph")
+export const cli = new Command()
+  .name("Graph DraQLa 🧛")
   .version("0.0.1")
   .description("local graphQL")
   .command("run", "run graphQL query")
@@ -28,8 +26,3 @@ const command = new Command()
   .option("-g, --graphiql", "graphiQL", { default: true })
   .option("-p, --port <port:number>", "port", { default: 3000 })
   .action(({ graphiql, port }) => serve(graphiql, port));
-
-await command
-  .parse(Deno.args);
-
-command.showHelp();

@@ -1,5 +1,4 @@
-import { GraphQLHTTP, runHttpQuery } from "gql";
-import { serve as serveHttp } from "server";
+import { GraphQLHTTP, runHttpQuery, serveHttp } from "./deps.ts";
 import { schema } from "./schema.ts";
 
 export function run(query: string) {

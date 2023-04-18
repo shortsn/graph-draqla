@@ -1,6 +1,5 @@
 // deno-lint-ignore-file no-explicit-any no-unused-vars
-import { parse } from "csv";
-import { IResolvers } from "graphql_tools/utils/interfaces.ts";
+import { IResolvers, parseCSV } from "./deps.ts";
 
 const pick = (obj: Record<string, unknown>, keys: string[]) => Object.fromEntries(
   keys
@@ -57,7 +56,7 @@ export const resolvers: IResolvers = {
     text,
     size,
     rows: async ({ name }: any, { include, exclude }: any, context: any) => {
-      const rows = parse(await readFile(name), { skipFirstRow: true });
+      const rows = parseCSV(await readFile(name), { skipFirstRow: true });
       if (include?.length) {
         return rows.map(row => pick(row, include))
       }
