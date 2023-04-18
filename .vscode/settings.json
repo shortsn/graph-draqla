@@ -1,6 +1,5 @@
 {
   "deno.enable": true,
   "deno.codeLens.references": true,
-  "deno.lint": true,
-  "deno.suggest.imports.hosts": {}
+  "deno.lint": true
 }
